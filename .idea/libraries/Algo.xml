@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Algo">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/.lift" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/.lift" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/.lift" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/.lift" recursive="false" type="SOURCES" />
+  </library>
+</component>
