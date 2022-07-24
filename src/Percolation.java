@@ -1,9 +1,9 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
-    boolean[] substrate;
-    WeightedQuickUnionUF percs;
-    int n;
+    private boolean[] substrate;
+    private WeightedQuickUnionUF percs;
+    private int n;
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
@@ -59,13 +59,24 @@ public class Percolation {
     }
 
     // check if the site is open
-    public boolean isOpen(int coor) {
+    public boolean isOpen(int row, int col) {
+        int coor = xyTo1D(row, col);
         return (substrate[coor]);
+    }
+
+    public int numberOfOpenSites() {
+        int numOpen = 0;
+        for (int i = 0; i <= n * n; i++) {
+            if (substrate[i]) {
+                numOpen++;
+            }
+        }
+        return numOpen;
     }
 
     public boolean isFull(int row, int col) {
         int coor = xyTo1D(row, col);
-        return (percs.find(coor) == percs.find(0));
+        return (percs.find(coor) == percs.find(0) && isOpen(row, col));
     }
 
     // convert coordinates from 2d to 1d
